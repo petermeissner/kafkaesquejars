@@ -190,13 +190,9 @@ system.file(package = "kafkaesquejars", "java") %>%
   cat(sep="\n")
 ```
 
-And will load them on package load time.
 
 
 
-```{r}
-kafkaesquejars:::.onLoad
-```
 
 
 
