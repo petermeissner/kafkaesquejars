@@ -2,7 +2,7 @@ Package: kafkaesquejars
 Type: Package
 Title: Java Jars for the Package 'kafkaesque'
 Version: 2.3.1
-Date: 2020-02-22
+Date: 2020-02-29
 Authors@R: c(
     person( 
       given  = "Peter",  
@@ -41,11 +41,12 @@ Authors@R: c(
 Maintainer: Peter Meissner <retep.meissner@gmail.com>
 SystemRequirements: Java
 Description: Contents of 'Kafka-clients' & supporting Java archives (<https://github.com/apache/kafka>).
-    Version number reflects the version number of the included 'JAR' file.
+    The version number of the package reflects the version number of the included 'JAR' file.
 License: Apache License (>= 2.0) | file LICENSE
 Encoding: UTF-8
 Suggests:
-    covr
+    covr,
+    magrittr
 Depends:
     R (>= 3.2.0),
     rJava

@@ -24,11 +24,11 @@ status](https://ci.appveyor.com/api/projects/status/github/petermeissner/kafkaes
 <img src="http://cranlogs.r-pkg.org/badges/grand-total/kafkaesquejars">
 <img src="http://cranlogs.r-pkg.org/badges/kafkaesquejars">
 
-*lines of R code:* 16, *lines of test code:* 5
+*lines of R code:* 9, *lines of test code:* 3
 
 **Version**
 
-2.3.1 ( 2020-02-29 12:09:48 )
+2.3.1 ( 2020-02-29 22:00:05 )
 
 **Description**
 
@@ -83,7 +83,7 @@ devtools::install_github("petermeissner/kafkaesquejars")
 
 # Content
 
-## Not much to see
+## Not much R to see
 
 ``` r
 library(kafkaesquejars)
@@ -95,79 +95,42 @@ library(kafkaesquejars)
 ls("package:kafkaesquejars")
 ```
 
-    ## [1] "%>%"              "test_method_call"
+    ## [1] "%>%"
 
 ## Its all about the Java
 
-### Kafka properties objects
+This package has all the Java dependencies needed for the {kafkaesque}
+package.
 
 ``` r
-props <- rJava::.jnew("kafkaesquejars.Kafka_props")
-
-props$set_prop("my_key", "my_value")
-props$set_prop("my_keynote", "my_valuables")
-
-props$to_json() %>% 
-  cat()
+system.file(package = "kafkaesquejars", "java") %>% 
+  list.files() %>% 
+  cat(sep="\n")
 ```
 
-    ## {"my_keynote":"my_valuables","my_key":"my_value"}
+    ## gson-2.8.6.jar
+    ## hamcrest-core-1.3.jar
+    ## junit-4.11.jar
+    ## kafka-clients-2.3.1.jar
+    ## kafkaesquejars-2.3.1.jar
+    ## lz4-java-1.6.0.jar
+    ## slf4j-api-1.7.26.jar
+    ## slf4j-simple-1.6.2.jar
+    ## snappy-java-1.1.7.3.jar
+    ## zstd-jni-1.4.0-1.jar
+
+And will load them on package load time.
 
 ``` r
-props$from_json("{'a':'b', 'c':'d'}")
-
-props$to_json() %>% 
-  cat()
+kafkaesquejars:::.onLoad
 ```
 
-    ## {"my_keynote":"my_valuables","a":"b","c":"d","my_key":"my_value"}
-
-``` r
-props$to_json_pretty() %>% 
-  cat()
-```
-
-    ## {
-    ##   "my_keynote": "my_valuables",
-    ##   "a": "b",
-    ##   "c": "d",
-    ##   "my_key": "my_value"
-    ## }
-
-### Kafka properties objects specific to producers
-
-``` r
-prod_props <- rJava::.jnew("kafkaesquejars.Kafka_producer_props")
-
-prod_props$to_json_pretty() %>% 
-  cat()
-```
-
-    ## {
-    ##   "value.serializer": "org.apache.kafka.common.serialization.StringSerializer",
-    ##   "bootstrap.servers": "localhost:9092",
-    ##   "key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
-    ## }
-
-### Kafka producer object
-
-``` r
-prod <- rJava::.jnew("kafkaesquejars.Kafka_producer")
-cat(names(prod), sep="\n")
-```
-
-    ## props
-    ## prod
-    ## main(
-    ## send_message(
-    ## producer_close()
-    ## producer_start()
-    ## wait(
-    ## wait(
-    ## wait()
-    ## equals(
-    ## toString()
-    ## hashCode()
-    ## getClass()
-    ## notify()
-    ## notifyAll()
+    ## function(libname, pkgname) {
+    ##     rJava::.jpackage(pkgname, jars = "*", lib.loc = libname)
+    ## 
+    ##     system.file("java", package = pkgname) %>%
+    ##       list.files() %>%
+    ##       rJava::.jaddClassPath()
+    ##   }
+    ## <bytecode: 0x00000000140a7630>
+    ## <environment: namespace:kafkaesquejars>

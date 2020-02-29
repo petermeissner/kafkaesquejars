@@ -35,6 +35,7 @@ tmp <- packageDescription( "kafkaesquejars" )
 
 package_name <- tmp$Package
 
+library(magrittr)
 ```
 
 ```{r readme title, results='asis', echo=FALSE}
@@ -181,44 +182,23 @@ ls("package:kafkaesquejars")
 
 ## Its all about the Java
 
+This package has all the Java dependencies needed for the {kafkaesque} package.
 
-### Kafka properties objects
 ```{r}
+system.file(package = "kafkaesquejars", "java") %>% 
+  list.files() %>% 
+  cat(sep="\n")
+```
 
-props <- rJava::.jnew("kafkaesquejars.Kafka_props")
+And will load them on package load time.
 
-props$set_prop("my_key", "my_value")
-props$set_prop("my_keynote", "my_valuables")
 
-props$to_json() %>% 
-  cat()
 
-props$from_json("{'a':'b', 'c':'d'}")
-
-props$to_json() %>% 
-  cat()
-
-props$to_json_pretty() %>% 
-  cat()
+```{r}
+kafkaesquejars:::.onLoad
 ```
 
 
-### Kafka properties objects specific to producers
-
-```{r}
-prod_props <- rJava::.jnew("kafkaesquejars.Kafka_producer_props")
-
-prod_props$to_json_pretty() %>% 
-  cat()
-```
-
-
-
-### Kafka producer object
-```{r}
-prod <- rJava::.jnew("kafkaesquejars.Kafka_producer")
-cat(names(prod), sep="\n")
-```
 
 
 
