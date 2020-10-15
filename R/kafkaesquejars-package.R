@@ -8,4 +8,5 @@
 #' @name kafkaesquejars
 #' @docType package
 #' @author Peter Meissner <retep.meissner@@gmail.com>
+#' @import rJava
 NULL
