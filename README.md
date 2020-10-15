@@ -24,17 +24,17 @@ status](https://ci.appveyor.com/api/projects/status/github/petermeissner/kafkaes
 <img src="http://cranlogs.r-pkg.org/badges/grand-total/kafkaesquejars">
 <img src="http://cranlogs.r-pkg.org/badges/kafkaesquejars">
 
-*lines of R code:* 9, *lines of test code:* 3
+*lines of R code:* 5, *lines of test code:* 2
 
 **Version**
 
-2.3.1 ( 2020-02-29 22:00:05 )
+2.3.1-2 ( 2020-03-04 23:37:30 )
 
 **Description**
 
 Contents of ‘Kafka-clients’ & supporting Java archives
-(<https://github.com/apache/kafka>). Version number reflects the version
-number of the included ‘JAR’ file.
+(<https://github.com/apache/kafka>). The version number of the package
+reflects the version number of the included ‘JAR’ file.
 
 **License**
 
@@ -51,7 +51,7 @@ citation("kafkaesquejars")
 ```
 
 ``` r
-Meissner P, Pirv M (2020). kafkaesquejars: Java Jars for the Package 'kafkaesque'. R package version 2.3.1.
+Meissner P, Pirv M (2020). kafkaesquejars: Java Jars for the Package 'kafkaesque'. R package version 2.3.1-2.
 ```
 
 **BibTex for citing**
@@ -64,7 +64,7 @@ toBibtex(citation("kafkaesquejars"))
       title = {kafkaesquejars: Java Jars for the Package 'kafkaesque'},
       author = {Peter Meissner and Marius Pirv},
       year = {2020},
-      note = {R package version 2.3.1},
+      note = {R package version 2.3.1-2},
     }
 
 **Installation**
@@ -95,7 +95,7 @@ library(kafkaesquejars)
 ls("package:kafkaesquejars")
 ```
 
-    ## [1] "%>%"
+    ## character(0)
 
 ## Its all about the Java
 
@@ -109,28 +109,10 @@ system.file(package = "kafkaesquejars", "java") %>%
 ```
 
     ## gson-2.8.6.jar
-    ## hamcrest-core-1.3.jar
-    ## junit-4.11.jar
     ## kafka-clients-2.3.1.jar
-    ## kafkaesquejars-2.3.1.jar
+    ## logback-classic-1.2.3.jar
+    ## logback-core-1.2.3.jar
     ## lz4-java-1.6.0.jar
     ## slf4j-api-1.7.26.jar
-    ## slf4j-simple-1.6.2.jar
     ## snappy-java-1.1.7.3.jar
     ## zstd-jni-1.4.0-1.jar
-
-And will load them on package load time.
-
-``` r
-kafkaesquejars:::.onLoad
-```
-
-    ## function(libname, pkgname) {
-    ##     rJava::.jpackage(pkgname, jars = "*", lib.loc = libname)
-    ## 
-    ##     system.file("java", package = pkgname) %>%
-    ##       list.files() %>%
-    ##       rJava::.jaddClassPath()
-    ##   }
-    ## <bytecode: 0x00000000140a7630>
-    ## <environment: namespace:kafkaesquejars>

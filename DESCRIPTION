@@ -1,8 +1,8 @@
 Package: kafkaesquejars
 Type: Package
 Title: Java Jars for the Package 'kafkaesque'
-Version: 2.3.1-1
-Date: 2020-03-05
+Version: 2.3.1-2
+Date: 2020-10-15
 Authors@R: c(
     person( 
       given  = "Peter",  
@@ -50,4 +50,4 @@ Suggests:
 Depends:
     R (>= 3.2.0),
     rJava
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
