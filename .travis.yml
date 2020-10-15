@@ -2,7 +2,6 @@ language: r
 sudo: true
 before_install:
   - sudo apt-get update
-  - sudo apt-get -y install r-cran-rjava
   - sudo R CMD javareconf
 
 cache: packages
@@ -11,10 +10,10 @@ matrix:
   include:
     - os: linux
       r: oldrel
-    - os: linux
-      r: release
-    - os: linux
-      r: devel
+    # - os: linux
+    #   r: release
+    # - os: linux
+    #   r: devel
 r_packages:
   - covr
 after_success:
