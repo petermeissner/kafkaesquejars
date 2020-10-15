@@ -15,9 +15,6 @@ matrix:
       r: release
     - os: linux
       r: devel
-    - os: linux
-      dist: trusty
-      env: R_CODECOV=true
 r_packages:
   - covr
 after_success:
