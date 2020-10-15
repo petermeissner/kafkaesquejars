@@ -10,6 +10,8 @@ cache: packages
 apt_packages:
   - openjdk-8-jre
   - r-cran-rjava
+
+before_install:
   - sudo $(which R) CMD javareconf
 
 
