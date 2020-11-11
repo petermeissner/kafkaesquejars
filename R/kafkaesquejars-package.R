@@ -9,4 +9,8 @@
 #' @docType package
 #' @author Peter Meissner <retep.meissner@@gmail.com>
 #' @import rJava
+#'
+#' @examples
+#' library(kafkaesquejars)
+#'
 NULL
