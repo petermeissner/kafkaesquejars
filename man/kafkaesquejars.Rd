@@ -9,6 +9,10 @@ Kafka is a big data technology providing a scalable, persistent, distributed,
 high throughput event log to which clients can subscribe topics or publish
 messages.
 }
+\examples{
+library(kafkaesquejars)
+
+}
 \author{
 Peter Meissner \href{mailto:retep.meissner@gmail.com}{retep.meissner@gmail.com}
 }

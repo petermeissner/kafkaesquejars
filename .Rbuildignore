@@ -16,3 +16,5 @@
 ^LICENSE\.md$
 ^\.vscode$
 ^appveyor\.yml$
+^CRAN-RELEASE$
+^cran-comments\.md$
