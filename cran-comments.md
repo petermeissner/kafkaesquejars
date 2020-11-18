@@ -32,7 +32,7 @@ Please fix and resubmit.
 
 ## My Comments and Actions Taken
 
-- Directory ./inst/java created and file sources.md added. sources.md contains 
+- Directory ./java created and file sources.md added. sources.md contains 
 a list of URLs where any user can download the source code of the jar files 
 contained in ./inst/java and distributed with the package.
 

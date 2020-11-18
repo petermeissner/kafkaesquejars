@@ -1,5 +1,8 @@
 # Sources
 
+This document lists URLs where source code versions of the distributed Jar-files
+can be downloaded. 
+
 ## gson-2.8.6.jar
 
 - https://github.com/google/gson/releases/tag/gson-parent-2.8.6
@@ -13,17 +16,10 @@
 
 
 
-## logback-classic-1.2.3.jar
+## log4j-api-2.13.3.jar, log4j-core-2.13.3.jar, log4j-slf4j-impl-2.13.3.jar
 
-- https://github.com/qos-ch/logback/releases/tag/v_1.2.3
-- https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.2.3/
-
-
-## logback-core-1.2.3.jar
-
-- https://github.com/qos-ch/logback/releases/tag/v_1.2.3
-- https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/
-
+- https://logging.apache.org/log4j/2.x/download.html
+- https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.13.3/
 
 
 ## lz4-java-1.6.0.jar
